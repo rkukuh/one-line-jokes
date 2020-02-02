@@ -1,6 +1,6 @@
 {
     "name": "rkukuh/one-line-jokes",
-    "description": "Library to laugh at",
+    "description": "A library to laugh at",
     "type": "library",
     "license": "MIT",
     "authors": [
