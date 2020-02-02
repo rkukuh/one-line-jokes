@@ -19,7 +19,7 @@ class JokeFactoryTest extends TestCase
             'A fire hydrant has H-2-O on the inside and K-9-P on the outside.',
         ]);
     }
-    
+
     /** @test */
     // public function it_returns_random_joke()
     // {
