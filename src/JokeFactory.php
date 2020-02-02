@@ -2,24 +2,25 @@
 
 namespace Rkukuh\OneLineJokes;
 
+use GuzzleHttp\Client;
+
 class JokeFactory
 {
-    private $_jokes = [
-        'I ate a clock yesterday, it was very time-consuming.',
-        'A fire hydrant has H-2-O on the inside and K-9-P on the outside.',
-    ];
+    const API_ENDPOINT = 'http://api.icndb.com/jokes/random';
 
-    public function __construct(array $jokes = null)
+    private $client;
+
+    public function __construct(Client $client = null)
     {
-        if ($jokes) {
-            $this->_jokes = $jokes;
-        }
+        $this->client = $client ?: new Client();
     }
 
     public function getRandomJoke()
     {
-        $randomJoke = $this->_jokes[array_rand($this->_jokes)];
+        $response = $this->client->get(self::API_ENDPOINT);
 
-        return $randomJoke;
+        $contents = json_decode($response->getBody()->getContents());
+
+        return $contents->value->joke;
     }
 }
