@@ -1,11 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [v1.1.0 (2020-02-20)](https://github.com/rkukuh/one-line-jokes/compare/v1.0.0...v1.1.0)
 
-- None
+### Added
+
+- Pull jokes from [ICNDB](http://www.icndb.com/)
+
+### Changed
+
+- Unit test to mock json response
 
 ## v1.0.0 (2020-02-02)
 
-### Added
 - Initial release.
