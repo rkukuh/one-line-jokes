@@ -9,7 +9,9 @@
             "email": "rkukuh@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "guzzlehttp/guzzle": "^6.5"
+    },
     "autoload": {
         "psr-4": {
             "Rkukuh\\OneLineJokes\\": "src/"
