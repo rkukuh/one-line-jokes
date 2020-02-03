@@ -1,6 +1,6 @@
 <?php
 
-namespace Rkukuh\OneLineJokes;
+namespace Rkukuh\OneLineJokes\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
