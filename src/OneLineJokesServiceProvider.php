@@ -18,7 +18,7 @@ class OneLineJokesServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->bind('one-line-joke', function () {
+        $this->app->bind('one-line-jokes', function () {
             return new JokeFactory();
         });
     }

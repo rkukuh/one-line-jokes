@@ -8,6 +8,6 @@ class OneLineJokes extends Facade
 {
     public static function getFacadeAccessor()
     {
-        return 'one-line-joke';
+        return 'one-line-jokes';
     }
 }
