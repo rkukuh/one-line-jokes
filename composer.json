@@ -23,6 +23,17 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.5"
+        "phpunit/phpunit": "^8.5",
+        "orchestra/testbench": "^4.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rkukuh\\OneLineJokes\\OneLineJokesServiceProvider"
+            ],
+            "aliases": {
+                "OneLineJokes": "Rkukuh\\OneLineJokes\\Facades\\OneLineJokes"
+            }
+        }
     }
 }
