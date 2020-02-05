@@ -43,6 +43,10 @@ class LaravelTest extends TestCase
     /** @test */
     public function the_route_can_be_accessed()
     {
+        OneLineJokesFacade::shouldReceive('getRandomJoke')
+            ->once()
+            ->andReturn('some joke');
+
         $this->get('/joke')
             -> assertStatus(200);
     }
