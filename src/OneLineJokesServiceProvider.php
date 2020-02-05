@@ -2,8 +2,10 @@
 
 namespace Rkukuh\OneLineJokes;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Rkukuh\OneLineJokes\Console\OneLineJokes;
+use Rkukuh\OneLineJokes\Http\Controllers\OneLineJokesController;
 
 class OneLineJokesServiceProvider extends ServiceProvider
 {
@@ -14,6 +16,8 @@ class OneLineJokesServiceProvider extends ServiceProvider
                 OneLineJokes::class,
             ]);
         }
+
+        Route::get('/joke', OneLineJokesController::class);
     }
 
     public function register()
