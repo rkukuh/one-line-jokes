@@ -2,11 +2,11 @@
 
 namespace Rkukuh\OneLineJokes\Tests;
 
-use Orchestra\Testbench\TestCase;
 use Illuminate\Support\Facades\Artisan;
+use Orchestra\Testbench\TestCase;
 use Rkukuh\OneLineJokes\Console\OneLineJokes;
-use Rkukuh\OneLineJokes\OneLineJokesServiceProvider;
 use Rkukuh\OneLineJokes\Facades\OneLineJokes as OneLineJokesFacade;
+use Rkukuh\OneLineJokes\OneLineJokesServiceProvider;
 
 class LaravelTest extends TestCase
 {
