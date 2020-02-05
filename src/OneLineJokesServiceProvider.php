@@ -3,7 +3,7 @@
 namespace Rkukuh\OneLineJokes;
 
 use Illuminate\Support\ServiceProvider;
-use Rkukuh\OneLineJokes\Console\OneLineJokesCommand;
+use Rkukuh\OneLineJokes\Console\OneLineJokes;
 
 class OneLineJokesServiceProvider extends ServiceProvider
 {
@@ -11,7 +11,7 @@ class OneLineJokesServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                OneLineJokesCommand::class,
+                OneLineJokes::class,
             ]);
         }
     }

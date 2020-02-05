@@ -4,9 +4,9 @@ namespace Rkukuh\OneLineJokes\Tests;
 
 use Orchestra\Testbench\TestCase;
 use Illuminate\Support\Facades\Artisan;
-use Rkukuh\OneLineJokes\Facades\OneLineJokes;
-use Rkukuh\OneLineJokes\Console\OneLineJokesCommand;
+use Rkukuh\OneLineJokes\Console\OneLineJokes;
 use Rkukuh\OneLineJokes\OneLineJokesServiceProvider;
+use Rkukuh\OneLineJokes\Facades\OneLineJokes as OneLineJokesFacade;
 
 class LaravelTest extends TestCase
 {
@@ -20,7 +20,7 @@ class LaravelTest extends TestCase
     protected function getPackageAliases($app)
     {
         return [
-            'OneLineJokes' => OneLineJokesCommand::class,
+            'OneLineJokes' => OneLineJokes::class,
         ];
     }
 
@@ -29,7 +29,7 @@ class LaravelTest extends TestCase
     {
         $this->withoutMockingConsoleOutput();
 
-        OneLineJokes::shouldReceive('getRandomJoke')
+        OneLineJokesFacade::shouldReceive('getRandomJoke')
             ->once()
             ->andReturn('some joke');
 
