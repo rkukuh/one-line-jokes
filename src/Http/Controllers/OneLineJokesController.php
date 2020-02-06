@@ -9,7 +9,7 @@ class OneLineJokesController
     public function __invoke()
     {
         return view('one-line-jokes::joke', [
-            'joke' => OneLineJokes::getRandomJoke()
+            'joke' => OneLineJokes::getRandomJoke(),
         ]);
     }
 }

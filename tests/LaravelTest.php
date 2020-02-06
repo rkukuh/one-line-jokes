@@ -2,12 +2,12 @@
 
 namespace Rkukuh\OneLineJokes\Tests;
 
-use Orchestra\Testbench\TestCase;
-use Rkukuh\OneLineJokes\Models\Joke;
 use Illuminate\Support\Facades\Artisan;
+use Orchestra\Testbench\TestCase;
 use Rkukuh\OneLineJokes\Console\OneLineJokes;
-use Rkukuh\OneLineJokes\OneLineJokesServiceProvider;
 use Rkukuh\OneLineJokes\Facades\OneLineJokes as OneLineJokesFacade;
+use Rkukuh\OneLineJokes\Models\Joke;
+use Rkukuh\OneLineJokes\OneLineJokesServiceProvider;
 
 class LaravelTest extends TestCase
 {
@@ -27,7 +27,7 @@ class LaravelTest extends TestCase
 
     protected function getEnvironmentSetUp($app)
     {
-        include_once(__DIR__.'/../database/migrations/create_jokes_table.php');
+        include_once __DIR__.'/../database/migrations/create_jokes_table.php';
 
         (new \CreateJokesTable)->up();
     }
@@ -56,7 +56,7 @@ class LaravelTest extends TestCase
             ->andReturn('some joke');
 
         $this->get('/joke')
-            -> assertStatus(200)
+            ->assertStatus(200)
             ->assertViewIs('one-line-jokes::joke')
             ->assertViewHas('joke', 'some joke');
     }
