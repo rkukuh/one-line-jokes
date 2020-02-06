@@ -17,9 +17,17 @@ class OneLineJokesServiceProvider extends ServiceProvider
             ]);
         }
 
+        Route::get(config('one-line-jokes.route'), OneLineJokesController::class);
+
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'one-line-jokes');
 
-        Route::get('/joke', OneLineJokesController::class);
+        $this->publishes([
+            __DIR__.'/../resources/views' => resource_path('views/vendor/one-line-jokes'),
+        ], 'views');
+
+        $this->publishes([
+            __DIR__.'/../config/one-line-jokes.php' => base_path('config/one-line-jokes.php'),
+        ], 'config');
     }
 
     public function register()
@@ -27,5 +35,7 @@ class OneLineJokesServiceProvider extends ServiceProvider
         $this->app->bind('one-line-jokes', function () {
             return new JokeFactory();
         });
+
+        $this->mergeConfigFrom(__DIR__.'/../config/one-line-jokes.php', 'one-line-jokes');
     }
 }
