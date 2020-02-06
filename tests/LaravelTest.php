@@ -48,6 +48,8 @@ class LaravelTest extends TestCase
             ->andReturn('some joke');
 
         $this->get('/joke')
-            -> assertStatus(200);
+            -> assertStatus(200)
+            ->assertViewIs('one-line-jokes::joke')
+            ->assertViewHas('joke', 'some joke');
     }
 }
