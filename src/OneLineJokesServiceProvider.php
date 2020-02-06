@@ -17,6 +17,8 @@ class OneLineJokesServiceProvider extends ServiceProvider
             ]);
         }
 
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'one-line-jokes');
+
         Route::get('/joke', OneLineJokesController::class);
     }
 

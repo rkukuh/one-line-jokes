@@ -8,6 +8,8 @@ class OneLineJokesController
 {
     public function __invoke()
     {
-        return OneLineJokes::getRandomJoke();
+        return view('one-line-jokes::joke', [
+            'joke' => OneLineJokes::getRandomJoke()
+        ]);
     }
 }
