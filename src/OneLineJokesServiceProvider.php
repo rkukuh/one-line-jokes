@@ -28,6 +28,12 @@ class OneLineJokesServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/one-line-jokes.php' => base_path('config/one-line-jokes.php'),
         ], 'config');
+
+        if (! class_exists('CreateJokesTable')) { // FIXME: Didn't works as expected
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_jokes_table.php' => database_path('migrations/'. date('Y_m_d_His', time()) .'_create_jokes_table.php'),
+            ], 'migrations');
+        }
     }
 
     public function register()
